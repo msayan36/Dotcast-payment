@@ -1,7 +1,5 @@
-"use client"
-import Payment from "./components/Payment";
-import styles from "./page.module.css";
-// import Home from "./pages";
+// pages/index.js
+
 import { useState, useEffect } from 'react';
 import Web3 from 'web3';
 
@@ -36,8 +34,8 @@ export default function Home() {
       try {
         const txHash = await web3.eth.sendTransaction({
           from: accounts[0],
-          to: '0x05b3184045F48F6a04427D7D2d4657e13eEB6d9C',
-          value: web3.utils.toWei('0.01', 'ether'), // Sending 0.01 ETH
+          to: '0xRecipientAddress',
+          value: web3.utils.toWei('1', 'ether'), // Sending 1 ETH
         });
         console.log('Transaction sent:', txHash);
       } catch (error) {
@@ -48,13 +46,13 @@ export default function Home() {
 
   return (
     <div>
-      <h1>DotCast</h1>
+      <h1>MetaMask Integration Example</h1>
       {web3 ? (
         <p>Connected to MetaMask</p>
       ) : (
         <p>Please connect to MetaMask</p>
       )}
-      <button onClick={handleSendTransaction}>Donate 0.01 eth</button>
+      <button onClick={handleSendTransaction}>Send Transaction</button>
     </div>
   );
 }
