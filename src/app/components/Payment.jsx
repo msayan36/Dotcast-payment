@@ -35,7 +35,7 @@ const Payment = () => {
 
         {/* Display the connected account */}
         {
-            (connectedAccount === null) ? <p>"Connect to Metamask first"</p> : <button>Pay Rs. 130</button>
+            (connectedAccount === null) ? <p>Connect to Metamask first</p> : <button>Pay Rs. 130</button>
         }
         {/* <h2>{connectedAccount}</h2> */}
     </>
